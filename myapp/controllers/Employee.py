@@ -5,20 +5,67 @@ from myapp.modelss.Employee import Employee
 
 @csrf_exempt
 
-def add_employee(request):
-    if request.method == 'POST':
+def add_employees(request, id):
+    if request:
         data = request.POST
-        company_id = data.get('company_id', None)
+        company_id = id
         employee_name = data.get('employee_name')
         employee_title = data.get('employee_title')
-        emloyee_contact_info = data.get('employee_contact_info')
+        employee_contact_info= data.get('employee_contact_info')
+       
 
         if company_id:
             employee = Employee(company_id=company_id, employee_name=employee_name, employee_title=employee_title,
-                                 employee_contact_info=emloyee_contact_info)
+                                 employee_contact_info=employee_contact_info)
             employee.save()
-            return JsonResponse({'status: Success'}, status=201)
+            return JsonResponse({'status': 'Success'}, status=201)
         else:
             return JsonResponse({'status':'error'}, status=404)
+    else:
+        return JsonResponse({'status': 'error'}, status = 400)
+    
+def update_employees(request, id, emp_id):
+    if request:
+        data = request.POST
+        company_id = id
+        employee_id = emp_id
+        employee_name = data.get('employee_name')
+        employee_title = data.get('employee_title')
+        employee_contact_info= data.get('employee_contact_info')
+       
+        try:
+            employee = Employee.objects.get(company_id= company_id, employee_id=employee_id)
+
+        except Employee.DoesNotExist:
+            return JsonResponse({'status':'error', 'message':'Employee does not exists in your company'}, status = 401)
+        employee.employee_name = employee_name
+        employee.employee_title = employee_title
+        employee.employee_contact_info = employee_contact_info
+        employee.save()
+    else:
+        return JsonResponse({'status': 'error'}, status = 400)
+    
+
+
+def show_employees(request, id):
+    if request:
+        company_id = id
+       
+        try:
+            employee = Employee.objects.filter(company_id= company_id)
+            employees_data = []
+
+            for i in employee:
+                employee_data={
+                    'employee_id':i.employee_id,
+                    'employee_title':i.employee_title,
+                    'employee_contact_info':i.employee_contact_info
+                }
+                employees_data.append(employee_data)
+            return JsonResponse({'employees': employees_data}, status=200)
+
+        except Employee.DoesNotExist:
+            return JsonResponse({'status':'error', 'message':'Employee does not exists in your company'}, status = 401)
+        
     else:
         return JsonResponse({'status': 'error'}, status = 400)

@@ -1,7 +1,7 @@
 from django.urls import path, include
 from . import views
 from myapp.controllers.Company import add_companies, update_companies, get_companies
-from myapp.controllers.Employee import add_employee
+from myapp.controllers.Employee import add_employees,show_employees
 urlpatterns = [
     
     # path('add_person/', views.add_person, name='add_person'),
@@ -11,6 +11,8 @@ urlpatterns = [
     path('api/companies/<int:id>/', get_companies, name='get_companies'),
     
 
-    path('api/employees', add_employee, name='add_employee'),
+    path('api/employees/<int:id>/', add_employees, name='add_employees'),
+    # path('api/employees/update/<int:id>/<int:emp_id>/', update_employees, name='update_employees'),
+    path('api/employees/show/<int:id>/', show_employees, name='show_employees'),
 
 ]
