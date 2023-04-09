@@ -34,14 +34,15 @@ def update_employees(request, id, emp_id):
         employee_contact_info= data.get('employee_contact_info')
        
         try:
-            employee = Employee.objects.get(company_id= company_id, employee_id=employee_id)
-
+            employee = Employee.objects.get(company_id= company_id, id=employee_id)
+            employee.employee_name = employee_name
+            employee.employee_title = employee_title
+            employee.employee_contact_info = employee_contact_info
+            employee.save()
+            return JsonResponse({'status':'success'}, status = 201)
         except Employee.DoesNotExist:
             return JsonResponse({'status':'error', 'message':'Employee does not exists in your company'}, status = 401)
-        employee.employee_name = employee_name
-        employee.employee_title = employee_title
-        employee.employee_contact_info = employee_contact_info
-        employee.save()
+
     else:
         return JsonResponse({'status': 'error'}, status = 400)
     
@@ -57,7 +58,8 @@ def show_employees(request, id):
 
             for i in employee:
                 employee_data={
-                    'employee_id':i.employee_id,
+                    'employee_id':i.id,
+                    'employee_name':i.employee_name,
                     'employee_title':i.employee_title,
                     'employee_contact_info':i.employee_contact_info
                 }
@@ -67,5 +69,28 @@ def show_employees(request, id):
         except Employee.DoesNotExist:
             return JsonResponse({'status':'error', 'message':'Employee does not exists in your company'}, status = 401)
         
+    else:
+        return JsonResponse({'status': 'error'}, status = 400)
+    
+
+def get_employee_info(request, id, emp_id):
+    if request:
+        data = request.POST
+        company_id = id
+        employee_id = emp_id
+        employee_name = data.get('employee_name')
+        employee_title = data.get('employee_title')
+        employee_contact_info= data.get('employee_contact_info')
+       
+        try:
+            employee = Employee.objects.get(company_id= company_id, id=employee_id)
+            
+            return JsonResponse({'employee_id':employee_id,
+                                 'employee_name':employee_name,
+                                 'employee_title':employee_title,
+                                 'employee_contact_info':employee_contact_info}, status = 201)
+        except Employee.DoesNotExist:
+            return JsonResponse({'status':'error', 'message':'Employee does not exists in your company'}, status = 401)
+
     else:
         return JsonResponse({'status': 'error'}, status = 400)

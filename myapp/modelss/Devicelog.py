@@ -1,10 +1,13 @@
 from django.db import models
+from myapp.modelss.Company import Company
+from myapp.modelss.Employee import Employee
+from myapp.modelss.Device import Device
 
 class Device_Log(models.Model):
-    log_id = models.AutoField(primary_key=True)
-    device_id = models.IntegerField(max_length=500)
-    employee_id = models.IntegerField(max_length=500)
-    company_id = models.IntegerField(max_length=500)
+    id = models.AutoField(primary_key=True)
+    device = models.ForeignKey(Device, on_delete=models.CASCADE, default=None)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, default=None)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, default=None)
     checkout_time = models.DateTimeField()
     return_time = models.DateTimeField()
     checkout_condition = models.CharField(max_length=100)
