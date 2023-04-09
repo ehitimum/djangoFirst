@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'djangoFirst.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'deviceman',
+        'NAME': 'devicesystem',
         'USER': 'root',
         'PASSWORD': '',
         'HOST':'localhost',
