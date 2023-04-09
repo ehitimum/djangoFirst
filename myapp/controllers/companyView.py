@@ -13,13 +13,13 @@ def add_company(request):
         company_address = data.get('company_address')
         
         if Company.objects.filter(company_name=company_name).exists():
-            return JsonResponse({'status': 'error', 'message': 'Company already exists'})
+            return JsonResponse({'status': 'error', 'message': 'Company already exists'}, status = 404)
         
         company = Company(company_name=company_name, company_address=company_address)
         company.save()
-        return JsonResponse({'status': 'success'})
+        return JsonResponse({'status': 'success'}, status = 201)
     else:
-        return JsonResponse({'status': 'error'})
+        return JsonResponse({'status': 'error'}, status = 400)
 
 
 
@@ -44,13 +44,13 @@ def update_company(request):
         try:
             company = Company.objects.get(company_id = company_id)
         except Company.DoesNotExist:
-            return JsonResponse({'status':'error', 'message':'Company does not exists'})
+            return JsonResponse({'status':'error', 'message':'Company does not exists'}, status = 401)
         company.company_name = company_name
         company.company_address = company_address
         company.save()
-        return JsonResponse({'status':'success'})
+        return JsonResponse({'status':'success'}, status = 201)
     else:
-        return JsonResponse({'status':'error'})
+        return JsonResponse({'status':'error'}, status = 400)
 
 def get_company(request):
     if request.method == 'GET':
@@ -68,9 +68,9 @@ def get_company(request):
                 return JsonResponse({
                     'status':'error',
                     'message':'Company information cannot be retrive due to company id and the request id is not matching.'
-                })
+                },status = 401)
         else:
             return JsonResponse({'status':'error',
-                                 'message':'Missing Company_id'})
+                                 'message':'Missing Company_id'},status = 404)
     else:
-        return JsonResponse({'status':'error'})
+        return JsonResponse({'status':'error'},status = 400)
