@@ -21,6 +21,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
     def update_companies(request, id):
         try:
             company = Company.objects.get(id=id)
+            
         except Company.DoesNotExist:
             return Response({'status': 'error', 'message': 'Company does not exist.'}, status=status.HTTP_404_NOT_FOUND)
 
