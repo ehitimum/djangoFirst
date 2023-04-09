@@ -1,4 +1,6 @@
 from rest_framework import status, viewsets
+from django.views.decorators.csrf import csrf_exempt
+
 from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from myapp.modelss.Company import Company
@@ -10,7 +12,6 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
     @api_view(['POST'])
-    
     def add_employees(request):
             serializer = EmployeeSerializer(data=request.data)
             if serializer.is_valid():

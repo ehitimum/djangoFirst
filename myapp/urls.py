@@ -32,15 +32,15 @@ from myapp.controllers.Employee import EmployeeViewSet
 
 # urlpatterns = [
 #     path('api/', include(router.urls)),
-#     path('api/companies/<int:id>/', include(companies_router.urls)),
-#      path('api/companies/<int:company_id>/employees/', EmployeeViewSet.as_view({'get': 'app_employees'}), name='app_employees'),
+#     path('api/companies/', include(companies_router.urls)),
+#     #  path('api/companies/<int:company_id>/employees/', EmployeeViewSet.as_view({'get': 'app_employees'}), name='app_employees'),
 # ]
 router = routers.SimpleRouter()
 router.register(r'companies', CompanyViewSet, basename='CompanyViewSet')
 router.register(r'employees', EmployeeViewSet, basename='EmployeeViewSet')
 
 urlpatterns = [
-    # path('api/', include(router.urls)),
+    path('api/', include(router.urls)),
     path('api/', include(router.urls)),
 ]
 
