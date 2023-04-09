@@ -23,7 +23,7 @@ from myapp.controllers.Company import CompanyViewSet
 # from myapp.controllers.Employee import Employee
 
 router = routers.SimpleRouter()
-router.register(r'companies', CompanyViewSet)
+router.register(r'companies', CompanyViewSet, basename='CompanyViewSet')
 # router.register(r'employees', Employee)
 
 urlpatterns = [
