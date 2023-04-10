@@ -26,7 +26,7 @@ def add_device_logs(request, id, de_id):
             return JsonResponse({'status':'error'}, status=404)
     else:
         return JsonResponse({'status': 'error'}, status = 400)
-    
+#This one will show the logs of a device. There can be multiple logs for a device 
 def show_device_log(request, id, de_id):
     if request:
         company_id = id
@@ -57,7 +57,7 @@ def show_device_log(request, id, de_id):
     else:
         return JsonResponse({'status': 'error'}, status = 400)
 
-    
+#This ones job is to update some logs for information 
 def update_device_logs(request, id, de_id, log_id):
     if request:
         data = request.POST

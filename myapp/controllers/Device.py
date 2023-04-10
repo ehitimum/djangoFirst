@@ -5,6 +5,7 @@ from myapp.modelss.Device import Device
 
 @csrf_exempt
 
+# This function will add device using the id which is company id from the url.
 def add_devices(request, id):
     if request:
         data = request.POST
@@ -22,7 +23,7 @@ def add_devices(request, id):
             return JsonResponse({'status':'error'}, status=404)
     else:
         return JsonResponse({'status': 'error'}, status = 400)
-    
+# This one updates that device information  
 def update_device_info(request, id, de_id):
     if request:
         data = request.POST
@@ -42,7 +43,7 @@ def update_device_info(request, id, de_id):
 
     else:
         return JsonResponse({'status': 'error'}, status = 400)
-
+# This one will show all the device listed under that particular company
 def show_device_list(request, id):
     if request:
         company_id = id

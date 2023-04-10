@@ -23,7 +23,7 @@ def add_employees(request, id):
             return JsonResponse({'status':'error'}, status=404)
     else:
         return JsonResponse({'status': 'error'}, status = 400)
-    
+#update an eployee information
 def update_employees(request, id, emp_id):
     if request:
         data = request.POST
@@ -47,7 +47,7 @@ def update_employees(request, id, emp_id):
         return JsonResponse({'status': 'error'}, status = 400)
     
 
-
+#Show all the employee list under a company
 def show_employees(request, id):
     if request:
         company_id = id
