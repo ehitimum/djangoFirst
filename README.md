@@ -14,26 +14,27 @@ This is a Django task that is given to me by Repliq company.
 
 1. Visit `http://localhost:8000` to access the site.
 2. Since its only backend project, I build it on the base of JSON request and response.
-3. Downlode PostMan Software and send various post request using the links below:
-     add_company: http://localhost:8000/myapp/api/companies/                               
-     update_company: http://localhost:8000/myapp/api/companies/<int:id>/                    
-     get_company_informantion: http://localhost:8000/myapp/api/companies/<int:id>/show/               
+3. Install PostMan Software and send various post request using the links below:
+
+     add_company: http://localhost:8000/myapp/api/companies/                                           
+     update_company: http://localhost:8000/myapp/api/companies/<int:id>/                          
+     get_company_informantion: http://localhost:8000/myapp/api/companies/<int:id>/show/                                  
     
 
-     add employees: http://localhost:8000/myapp/api/companies/<int:id>/employees/           
-     update employee information: http://localhost:8000/myapp/api/companies/<int:id>/employees/<int:emp_id>/
-     show employee list: http://localhost:8000/myapp/api/companies/<int:id>/employees/show/
-     get employee information: http://localhost:8000/myapp/api/companies/<int:id>/employees/<int:emp_id>/show/
+     add employees: http://localhost:8000/myapp/api/companies/<int:id>/employees/                                        
+     update employee information: http://localhost:8000/myapp/api/companies/<int:id>/employees/<int:emp_id>/                           
+     show employee list: http://localhost:8000/myapp/api/companies/<int:id>/employees/show/                        
+     get employee information: http://localhost:8000/myapp/api/companies/<int:id>/employees/<int:emp_id>/show/                    
 
 
-     add devices: http://localhost:8000/myapp/api/companies/<int:id>/devices/
-     show devices list: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/
-     update device information: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/
+     add devices: http://localhost:8000/myapp/api/companies/<int:id>/devices/                                                
+     show devices list: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/                            
+     update device information: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/                           
 
 
-     add device logs: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/
-     show device logs: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/
-     update device logs: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/<int:log_id>/
+     add device logs: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/                                          
+     show device logs: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/                                 
+     update device logs: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/<int:log_id>/                       
      
      ### <int:id> = here goes the company id, <int:emp_id> = employee id, <int:de_id> = device id, <int:log_id> = log id
 
