@@ -16,27 +16,27 @@ This is a Django task that is given to me by Repliq company.
 2. Since its only backend project, I build it on the base of JSON request and response.
 3. Install PostMan Software and send various post request using the links below:
      
-     [Download Postman Collection](./create company.postman_collection.json)
+     [Postman Collection](./company.postman_collection.json)
      
-     add_company: http://localhost:8000/myapp/api/companies/                                           
-     update_company: http://localhost:8000/myapp/api/companies/<int:id>/                          
-     get_company_informantion: http://localhost:8000/myapp/api/companies/<int:id>/show/                                  
+     add_company: `http://localhost:8000/myapp/api/companies/`                                          
+     update_company: `http://localhost:8000/myapp/api/companies/<int:id>/`                         
+     get_company_informantion: `http://localhost:8000/myapp/api/companies/<int:id>/show/`                                  
     
 
-     add employees: http://localhost:8000/myapp/api/companies/<int:id>/employees/                                        
-     update employee information: http://localhost:8000/myapp/api/companies/<int:id>/employees/<int:emp_id>/                           
-     show employee list: http://localhost:8000/myapp/api/companies/<int:id>/employees/show/                        
-     get employee information: http://localhost:8000/myapp/api/companies/<int:id>/employees/<int:emp_id>/show/                    
+     add employees: `http://localhost:8000/myapp/api/companies/<int:id>/employees/`                                        
+     update employee information: `http://localhost:8000/myapp/api/companies/<int:id>/employees/<int:emp_id>/`                           
+     show employee list: `http://localhost:8000/myapp/api/companies/<int:id>/employees/show/`                        
+     get employee information: `http://localhost:8000/myapp/api/companies/<int:id>/employees/<int:emp_id>/show/`                    
 
 
-     add devices: http://localhost:8000/myapp/api/companies/<int:id>/devices/                                                
-     show devices list: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/                            
-     update device information: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/                           
+     add devices: `http://localhost:8000/myapp/api/companies/<int:id>/devices/`                                                
+     show devices list: `http://localhost:8000/myapp/api/companies/<int:id>/devices/show/`                            
+     update device information: `http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/`                          
 
 
-     add device logs: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/                                          
-     show device logs: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/                                 
-     update device logs: http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/<int:log_id>/                       
+     add device logs: `http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/`                                          
+     show device logs: `http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/`          
+     update device logs: `http://localhost:8000/myapp/api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/<int:log_id>/`                       
      
      ### <int:id> = here goes the company id, <int:emp_id> = employee id, <int:de_id> = device id, <int:log_id> = log id
 
@@ -61,26 +61,41 @@ the company model, employee model, device, and device log which I separated from
 
 Finally I wrote many crude programme in the conrollers folder for each model. Here is the file view of my project:
 
-├───djangoFirst                                                                                                                                                         
-│   └───__pycache__                                                                                                                                                     
-└───myapp                                                                                                                                                               
-    ├───controllers                                                                                                                                                     
-    │   └───__pycache__                                                                                                                                                 
-    |       company.py                                                                                                                                                 
-    |    device.py                                                                                                                                                    
-    |       devicelog.py                                                                                                                                               
-    |       employee.py                                                                                                                                                
-    ├───migrations                                                                                                                                                     
-    │   └───__pycache__                                                                                                                                                 
-    ├───modelss                                                                                                                                                         
-    │   └───__pycache__                                                                                                                                                 
-    |       company.py                                                                                                                                                 
-    |       device.py                                                                                                                                                   
-    |       devicelog.py                                                                                                                                               
-    |       employee.py                                                                                                                                                 
-    ├───serializers                                                                                                                                                     
-    │   └───__pycache__                                                                                                                                                 
-    └───__pycache__                                                                                                                                                     
+```bash
+
+djangoFirst/
+├── djangoFirst/
+│   ├── __pycache__/
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── __init__.py
+├── myapp/
+│   ├── __pycache__/
+│   ├── controllers/
+|   |   ├── __pycache__/
+│   │   ├── Company.py
+│   │   ├── Device.py
+│   │   └── DeviceLog.py
+│   ├── migrations/
+│   ├── modelss/
+|   |   ├── __pycache__/
+│   │   ├── Company.py
+│   │   ├── Device.py
+│   │   └── Devicelog.py
+│   ├── serializers/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── tests.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── __init__.py
+├── README.md
+└── manage.py
+
+```
                                                                                                                                                                        
 Controller folder is responisble for all the api request handling and database quarries while the modeless folder is responsible for connecting the modle with the
 database table. All tables are created based on the models of modeless folder. 
