@@ -15,7 +15,9 @@ This is a Django task that is given to me by Repliq company.
 1. Visit `http://localhost:8000` or `http://127.0.0.1:8000` to access the site.
 2. Since its only backend project, I build it on the base of JSON request and response.
 3. Install PostMan Software and send various post request using the links below:
-
+     
+     [Download Postman Collection](./create company.postman_collection.json)
+     
      add_company: http://localhost:8000/myapp/api/companies/                                           
      update_company: http://localhost:8000/myapp/api/companies/<int:id>/                          
      get_company_informantion: http://localhost:8000/myapp/api/companies/<int:id>/show/                                  
