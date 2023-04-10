@@ -58,7 +58,7 @@ def show_device_log(request, id, de_id):
         return JsonResponse({'status': 'error'}, status = 400)
 
     
-def update_device_info(request, id, de_id, log_id):
+def update_device_logs(request, id, de_id, log_id):
     if request:
         data = request.POST
         company_id = id

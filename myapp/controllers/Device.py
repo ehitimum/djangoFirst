@@ -43,7 +43,7 @@ def update_device_info(request, id, de_id):
     else:
         return JsonResponse({'status': 'error'}, status = 400)
 
-def show_employees(request, id):
+def show_device_list(request, id):
     if request:
         company_id = id
        
