@@ -48,6 +48,7 @@ This is a Django task that is given to me by Repliq company.
 ## How Its Done
 
 After reading the requirements, I first build a database schema. Below the database schema:
+![Database_Schema](https://github.com/ehitimum/djangoFirst/blob/master/dbschema.png)
 
 ## Credits
 
