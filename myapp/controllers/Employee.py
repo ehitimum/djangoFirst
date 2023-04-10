@@ -61,7 +61,7 @@ def show_employees(request, id):
                     'employee_id':i.id,
                     'employee_name':i.employee_name,
                     'employee_title':i.employee_title,
-                    'employee_contact_info':i.employee_contact_info
+                    'employee_contact_info':i.employee_contact_info,
                 }
                 employees_data.append(employee_data)
             return JsonResponse({'employees': employees_data}, status=200)

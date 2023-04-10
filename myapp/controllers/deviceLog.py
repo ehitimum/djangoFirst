@@ -39,9 +39,9 @@ def show_device_log(request, id, de_id):
             for i in device_log:
                 data={
                     'id':i.id,
-                    'device_id':i.device,
-                    'employee_id':i.employee,
-                    'company_id':i.company,
+                    # 'device_id':i.device,
+                    # 'employee_id':i.employee,
+                    # 'company_id':i.company,
                     'checkout_time':i.checkout_time,
                     'return_time':i.return_time,
                     'checkout_condition':i.checkout_condition,

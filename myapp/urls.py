@@ -10,7 +10,7 @@ urlpatterns = [
     # add any other URL patterns for your app here
     path('api/companies/', add_companies, name='add_companies'),
     path('api/companies/<int:id>/', update_companies, name='update_companies'),
-    path('api/companies/<int:id>/', get_companies, name='get_companies'),
+    path('api/companies/<int:id>/show/', get_companies, name='get_companies'),
     
 
     path('api/companies/<int:id>/employees/', add_employees, name='add_employees'),
@@ -21,12 +21,12 @@ urlpatterns = [
 
     path('api/companies/<int:id>/devices/', add_devices, name='add_devices'),
     path('api/companies/<int:id>/devices/show/', show_device_list, name='show_device_list'),
-    path('api/companies/<int:id>/devices/<int:de_id>/', update_device_info, name='update_device_info'),
+    path('api/companies/<int:id>/devices/show/<int:de_id>/', update_device_info, name='update_device_info'),
 
 
-    path('api/companies/<int:id>/devices/<int:de_id>/device_logs/', add_device_logs, name='add_device_logs'),
-    path('api/companies/<int:id>/devices/<int:de_id>/device_logs/show/', show_device_log, name='show_device_log'),
-    path('api/companies/<int:id>/devices/<int:de_id>/device_logs/show/<int:log_id>/', update_device_logs, name='update_device_logs'),
+    path('api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/', add_device_logs, name='add_device_logs'),
+    path('api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/', show_device_log, name='show_device_log'),
+    path('api/companies/<int:id>/devices/show/<int:de_id>/devicelogs/show/<int:log_id>/', update_device_logs, name='update_device_logs'),
 
 
 ]
