@@ -50,10 +50,42 @@ This is a Django task that is given to me by Repliq company.
 After reading the requirements, I first build a database schema. Below the database schema:
 ![Database_Schema](https://github.com/ehitimum/djangoFirst/blob/master/dbschema.png)
 
-## Credits
+Note: "Each company and its staff" whats the difference between staff and a employee is not clearly defined in the requirement. So by default I am assuming stuff is
+the company itself. Mean staff and company are same thing while employee is a different entity.
 
-- John Doe
-- Jane Smith
+Using that schema I build the models for my project. In my app folder I included all my models in modeless folder seperately from one another. There are 4 models,
+the company model, employee model, device, and device log which I separated from the device so that its easy to update that model.
+
+Finally I wrote many crude programme in the conrollers folder for each model. Here is the file view of my project:
+
+├───djangoFirst
+│   └───__pycache__
+└───myapp
+    ├───controllers
+    │   └───__pycache__
+    |       company.py
+    |       device.py
+    |       devicelog.py
+    |       employee.py
+    ├───migrations
+    │   └───__pycache__
+    ├───modelss
+    │   └───__pycache__
+    |       company.py
+    |       device.py
+    |       devicelog.py
+    |       employee.py
+    ├───serializers
+    │   └───__pycache__
+    └───__pycache__
+
+Controller folder is responisble for all the api request handling and database quarries while the modeless folder is responsible for connecting the modle with the
+database table. All tables are created based on the models of modeless folder. 
+
+I didnt use rest api frame work for this project because my understanding of django rest api framework has limitations. So in order to create a perfect code I didn't use rest api. 
+
+## Credits
+-Ehitimum Ahmed Choudhury
 
 
 
