@@ -1,0 +1,702 @@
+{
+	"info": {
+		"_postman_id": "41aa1be6-1dc1-45b0-ba99-de1c061e4f0a",
+		"name": "create company",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26495347"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "company_name",
+							"value": "rohmot bd",
+							"type": "text"
+						},
+						{
+							"key": "company_address",
+							"value": "city z",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						""
+					],
+					"query": [
+						{
+							"key": "company_name",
+							"value": "Micro cell",
+							"disabled": true
+						},
+						{
+							"key": "company_address",
+							"value": "city 8, Magnus road",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/myapp/api/companies/5/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "company_name",
+							"value": "Alhad",
+							"type": "text"
+						},
+						{
+							"key": "company_address",
+							"value": "city 13",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/5/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/5/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/5/show/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"5",
+						"show",
+						""
+					]
+				},
+				"description": "Get Company information"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/myapp/api/companies/3/employees/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "company_id",
+						"value": "2",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "employee_name",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "employee_title",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "employee_contact_info",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "employee_name ",
+							"value": "Humo",
+							"type": "text"
+						},
+						{
+							"key": "employee_title ",
+							"value": "senior",
+							"type": "text"
+						},
+						{
+							"key": "employee_contact_info ",
+							"value": "0981231234",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/myapp/api/companies/3/employees/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"3",
+						"employees",
+						""
+					],
+					"query": [
+						{
+							"key": "company_id",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "employee_name",
+							"value": "ehitimum",
+							"disabled": true
+						},
+						{
+							"key": "employee_title",
+							"value": "junior",
+							"disabled": true
+						},
+						{
+							"key": "employee_contact_info",
+							"value": "092380919273",
+							"disabled": true
+						}
+					]
+				},
+				"description": "ADD Employees"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/2/employees/show/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/2/employees/show/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"2",
+						"employees",
+						"show",
+						""
+					]
+				},
+				"description": "Show Employee List of a company"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/2/employees/5/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "employee_name ",
+							"value": "Humo",
+							"type": "text"
+						},
+						{
+							"key": "employee_title ",
+							"value": "senior",
+							"type": "text"
+						},
+						{
+							"key": "employee_contact_info ",
+							"value": "0981231234",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/2/employees/5/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"2",
+						"employees",
+						"5",
+						""
+					]
+				},
+				"description": "Update Employee ID 5's information"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/5/employees/5/show/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/5/employees/5/show/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"5",
+						"employees",
+						"5",
+						"show",
+						""
+					]
+				},
+				"description": "GET That particuler employees information"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/2/devices/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "device_name ",
+							"value": "MacBook Air",
+							"type": "text"
+						},
+						{
+							"key": "device_description",
+							"value": "Leptop",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/2/devices/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"2",
+						"devices",
+						""
+					]
+				},
+				"description": "Add device information"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"2",
+						"devices",
+						"show",
+						""
+					]
+				},
+				"description": "Show all device list under that company"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/2/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "device_name ",
+							"value": "MacBook Air",
+							"type": "text"
+						},
+						{
+							"key": "device_description",
+							"value": "Leptop",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"2",
+						"devices",
+						"show",
+						"2",
+						""
+					]
+				},
+				"description": "Update that particluar device information"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/3/devicelogs/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "employee",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "checkout_time",
+							"value": "2023-01-01 10:30:01",
+							"type": "text"
+						},
+						{
+							"key": "return_time",
+							"value": "2023-03-29 10:30:30",
+							"type": "text"
+						},
+						{
+							"key": "checkout_condition",
+							"value": "New",
+							"type": "text"
+						},
+						{
+							"key": "return_condition",
+							"value": "Used",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/3/devicelogs/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"2",
+						"devices",
+						"show",
+						"3",
+						"devicelogs",
+						""
+					]
+				},
+				"description": "add device log for that particular device"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/3/devicelogs/show/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "employee",
+							"value": "5",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "checkout_time",
+							"value": "2023-01-01 10:30:01",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "return_time",
+							"value": "2023-03-29 10:30:30",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "checkout_condition",
+							"value": "New",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "return_condition",
+							"value": "Used",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/3/devicelogs/show/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"2",
+						"devices",
+						"show",
+						"3",
+						"devicelogs",
+						"show",
+						""
+					]
+				},
+				"description": "Show all the logs for that device"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/3/devicelogs/show/3/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "employee",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "checkout_time",
+							"value": "2023-01-01 10:30:01",
+							"type": "text"
+						},
+						{
+							"key": "return_time",
+							"value": "2023-03-29 10:30:30",
+							"type": "text"
+						},
+						{
+							"key": "checkout_condition",
+							"value": "New",
+							"type": "text"
+						},
+						{
+							"key": "return_condition",
+							"value": "Used",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/myapp/api/companies/2/devices/show/3/devicelogs/show/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"myapp",
+						"api",
+						"companies",
+						"2",
+						"devices",
+						"show",
+						"3",
+						"devicelogs",
+						"show",
+						"3",
+						""
+					]
+				},
+				"description": "Update an old device log directly"
+			},
+			"response": []
+		}
+	]
+}
