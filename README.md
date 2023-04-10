@@ -58,27 +58,27 @@ the company model, employee model, device, and device log which I separated from
 
 Finally I wrote many crude programme in the conrollers folder for each model. Here is the file view of my project:
 
-├───djangoFirst
-│   └───__pycache__
-└───myapp
-    ├───controllers
-    │   └───__pycache__
-    |       company.py
-    |       device.py
-    |       devicelog.py
-    |       employee.py
-    ├───migrations
-    │   └───__pycache__
-    ├───modelss
-    │   └───__pycache__
-    |       company.py
-    |       device.py
-    |       devicelog.py
-    |       employee.py
-    ├───serializers
-    │   └───__pycache__
-    └───__pycache__
-
+├───djangoFirst                                                                                                                                                         
+│   └───__pycache__                                                                                                                                                     
+└───myapp                                                                                                                                                               
+    ├───controllers                                                                                                                                                     
+    │   └───__pycache__                                                                                                                                                 
+    |       company.py                                                                                                                                                 
+    |    device.py                                                                                                                                                    
+    |       devicelog.py                                                                                                                                               
+    |       employee.py                                                                                                                                                
+    ├───migrations                                                                                                                                                     
+    │   └───__pycache__                                                                                                                                                 
+    ├───modelss                                                                                                                                                         
+    │   └───__pycache__                                                                                                                                                 
+    |       company.py                                                                                                                                                 
+    |       device.py                                                                                                                                                   
+    |       devicelog.py                                                                                                                                               
+    |       employee.py                                                                                                                                                 
+    ├───serializers                                                                                                                                                     
+    │   └───__pycache__                                                                                                                                                 
+    └───__pycache__                                                                                                                                                     
+                                                                                                                                                                       
 Controller folder is responisble for all the api request handling and database quarries while the modeless folder is responsible for connecting the modle with the
 database table. All tables are created based on the models of modeless folder. 
 
